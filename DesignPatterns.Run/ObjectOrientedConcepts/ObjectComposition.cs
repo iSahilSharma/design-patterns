@@ -20,7 +20,6 @@ namespace DesignPatterns.ObjectOrientedConcepts.ObjectComposition
         }
     }
 
-
     /// <summary>
     /// Represents an accounting process that uses object composition.
     /// </summary>
