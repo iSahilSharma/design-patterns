@@ -1,2 +1,2 @@
 # Design Patterns Refresher 
-A collection of code modules describing design patterns in an easy to understand examples.
+Explore tried-and-true software design patterns through easy to understand code samples, helping you master the art of crafting elegant and efficient solutions.
