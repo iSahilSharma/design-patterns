@@ -102,7 +102,7 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
         void ProcessPayment(decimal amount);
     }
 
-    // Concrete Product: Debit Card Processor
+    // Concrete Products: Debit & Credit Card Processor
     public class DebitCardProcessor : IPaymentProcessor
     {
         public void ProcessPayment(decimal amount)
@@ -112,7 +112,6 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
         }
     }
 
-    // Concrete Product: Credit Card Processor
     public class CreditCardProcessor : IPaymentProcessor
     {
         public void ProcessPayment(decimal amount)
