@@ -1,6 +1,5 @@
 using System;
 
-// 
 namespace DesignPatterns.CreationalPatterns.FactoryMethod
 {
     #region Factory Method (Example 1)
