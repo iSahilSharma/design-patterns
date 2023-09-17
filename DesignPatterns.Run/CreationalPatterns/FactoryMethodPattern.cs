@@ -89,13 +89,14 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
     #endregion
 
     #region Factory Method (Example 2)
+    // Define an enumeration to represent different payment modes
     public enum PaymentMode
     {
         DebitCard,
         CreditCard
     }
 
-    // Product: Payment Processor
+    // Product: Payment Processor interface
     public interface IPaymentProcessor
     {
         void ProcessPayment(decimal amount);
@@ -107,7 +108,7 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
         public void ProcessPayment(decimal amount)
         {
             Console.WriteLine("Processing Debit Card payment.");
-            // Actual Debit Card processing logic
+            // Actual Debit Card processing logic here
         }
     }
 
@@ -117,22 +118,23 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
         public void ProcessPayment(decimal amount)
         {
             Console.WriteLine("Processing Credit Card payment.");
-            // Actual Credit Card processing logic
+            // Actual Credit Card processing logic here
         }
     }
 
     // Creator: Payment Processor Factory
     public class PaymentProcessorFactory
     {
+        // Factory method to create a payment processor based on the specified payment mode
         public IPaymentProcessor CreatePaymentProcessor(PaymentMode paymentMode)
         {
             switch (paymentMode)
             {
                 case PaymentMode.DebitCard:
-                    return new DebitCardProcessor();
+                    return new DebitCardProcessor(); // Create a Debit Card Processor
 
                 case PaymentMode.CreditCard:
-                    return new CreditCardProcessor();
+                    return new CreditCardProcessor(); // Create a Credit Card Processor
 
                 default:
                     throw new NotImplementedException("Payment Processor not defined.");
@@ -147,11 +149,13 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
         {
             PaymentProcessorFactory factory = new PaymentProcessorFactory();
 
-            // User selects a payment method (e.g., from user input)
-            // Create the appropriate payment processor using the factory
-            IPaymentProcessor paymentProcessor = factory.CreatePaymentProcessor(PaymentMode.DebitCard);
+            // User selects a payment method (e.g., from user input or configuration)
+            PaymentMode selectedPaymentMode = PaymentMode.DebitCard;
 
-            // Process the payment
+            // Create the appropriate payment processor using the factory
+            IPaymentProcessor paymentProcessor = factory.CreatePaymentProcessor(selectedPaymentMode);
+
+            // Process the payment using the selected payment processor
             paymentProcessor.ProcessPayment(100.0m);
         }
     }
