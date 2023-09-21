@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace DesignPatterns.BehavioralPatterns.ObserverPattern
 {
-    // Define the observer interface.
+    // Step 1: Define the observer interface.
     public interface IInvestor
     {
         void Update(Stock stock);
     }
 
-    // Implement the concrete observer.
+    // Step 2: Implement the concrete observer.
     public class Investor : IInvestor
     {
         private readonly string _name;
@@ -19,13 +19,14 @@ namespace DesignPatterns.BehavioralPatterns.ObserverPattern
             _name = name;
         }
 
+        // Step 4: Update method is called when the stock price changes.
         public void Update(Stock stock)
         {
             Console.WriteLine($"Notified {_name} of price change in {stock.Symbol}: New price is {stock.Price}");
         }
     }
 
-    // Define the subject.
+    // Step 3: Define the subject (observable).
     public class Stock
     {
         private readonly string _symbol;
@@ -41,7 +42,7 @@ namespace DesignPatterns.BehavioralPatterns.ObserverPattern
                 if (_price != value)
                 {
                     _price = value;
-                    NotifyObservers();
+                    NotifyObservers(); // Step 5: Notify observers when the price changes.
                 }
             }
         }
