@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DesignPatterns.BehavioralPatterns.ObserverPattern
+namespace DesignPatterns.BehavioralPatterns.Observer
 {
     // Step 1: Define the observer interface.
     public interface IInvestor

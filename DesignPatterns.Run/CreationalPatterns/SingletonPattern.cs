@@ -1,6 +1,6 @@
 using System;
 
-namespace DesignPatterns.CreationalPatterns.SingletonPattern
+namespace DesignPatterns.CreationalPatterns.Singleton
 {
        #region Approach One (without Lazy operator)
        // Singleton Logger class implementing the ILogger interface

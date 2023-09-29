@@ -1,6 +1,6 @@
 using System;
 
-namespace DesignPatterns.BehavioralPatterns.StrategyPattern
+namespace DesignPatterns.BehavioralPatterns.Strategy
 {
     // Define an interface for payment strategies
     public interface IPaymentStrategy

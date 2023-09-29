@@ -1,6 +1,6 @@
 using System;
 
-namespace DesignPatterns.StructuralPatterns.DecoratorPattern
+namespace DesignPatterns.StructuralPatterns.Decorator
 {
     // Step 1: Define the base interface for logging
     public interface ILogger
