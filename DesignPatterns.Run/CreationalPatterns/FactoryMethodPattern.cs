@@ -121,7 +121,12 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
     }
 
     // Creator: Payment Processor Factory
-    public class PaymentProcessorFactory
+    public interface IPaymentProcessorFactory
+    {
+        public IPaymentProcessor CreatePaymentProcessor(PaymentMode paymentMode);
+    }
+
+    public class PaymentProcessorFactory: IPaymentProcessorFactory
     {
         // Factory method to create a payment processor based on the specified payment mode
         public IPaymentProcessor CreatePaymentProcessor(PaymentMode paymentMode)
@@ -145,14 +150,13 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
     {
         public void EntryPoint()
         {
-            PaymentProcessorFactory factory = new PaymentProcessorFactory();
+            IPaymentProcessorFactory factory = new PaymentProcessorFactory();
 
             // User selects a payment method (e.g., from user input or configuration)
             PaymentMode selectedPaymentMode = PaymentMode.DebitCard;
 
             // Create the appropriate payment processor using the factory
             IPaymentProcessor paymentProcessor = factory.CreatePaymentProcessor(selectedPaymentMode);
-
             // Process the payment using the selected payment processor
             paymentProcessor.ProcessPayment(100.0m);
         }
