@@ -58,9 +58,9 @@ namespace DesignPatterns.StructuralPatterns.Adapter
     }
 
     // Step 6: Client code that uses the payment processing system
-    class Program
+    class TestAdapterPattern
     {
-        static void Main()
+        static void EntryPoint()
         {
             // Create a standard payment processor
             IPaymentProcessor standardProcessor = new PaymentProcessor();

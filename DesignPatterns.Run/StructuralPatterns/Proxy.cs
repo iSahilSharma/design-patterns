@@ -56,9 +56,9 @@ namespace DesignPatterns.StructuralPatterns.Proxy
     }
 
     // Step 4: Client code that uses the proxy and real video
-    class Program
+    public class TestProxyPattern
     {
-        static void Main()
+        static void EntryPoint()
         {
             // Use the VideoProxy to play a video
             IVideo video = new VideoProxy("https://example.com/video.mp4");
